@@ -1,5 +1,20 @@
 # ComfyUI-ares_text_editor
 
+## English Overview
+
+A ComfyUI custom node that **pauses the workflow for manual text editing** before continuing. Connect upstream text to `input_text`, run the workflow, and the node blocks until you edit the text and click **确认并继续 (Confirm & Continue)** to resume with your edited content.
+
+- True blocking pause - the workflow does not continue until you confirm
+- Keeps your edited text - it is never overwritten
+- Single-pass execution - downstream runs once with the edited text
+- Fully local, uses only ComfyUI's built-in server
+
+> 中文文档见下方，以下为中文完整说明。
+
+---
+
+## 简介
+
 一个 ComfyUI 自定义节点插件，用于在生成流程中暂停工作流、人工编辑文本后再继续执行。
 
 适合用于：AI 生成提示词后人工润色、批量工作流中间需要人工确认的文本内容。
