@@ -39,14 +39,14 @@ app.registerExtension({
                             stopFill();
                         }
                     } catch (e) {
-                        console.error("[Text Editor] 拉取输入失败:", e);
+                        console.error("[Text Editor] Failed to fetch input:", e);
                     }
                 }, 400);
             };
 
             // 确认并继续：提交当前编辑内容，后端解除阻塞并继续执行
-            const confirmButton = this.addWidget("button", "确认并继续", null, async () => {
-                confirmButton.name = "提交中...";
+            const confirmButton = this.addWidget("button", "Confirm & Continue", null, async () => {
+                confirmButton.name = "Submitting...";
                 try {
                     const res = await api.fetchApi("/ares_text_editor/confirm", {
                         method: "POST",
@@ -62,16 +62,16 @@ app.registerExtension({
                         app.queuePrompt(0, 1);
                     }
                 } catch (e) {
-                    console.error("[Text Editor] 提交失败:", e);
-                    alert("提交失败，请重试");
+                    console.error("[Text Editor] Submit failed:", e);
+                    alert("Submit failed, please retry");
                 } finally {
-                    confirmButton.name = "确认并继续";
+                    confirmButton.name = "Confirm & Continue";
                 }
             });
             confirmButton.serialize = false;
 
             // 加载新输入：清空编辑框，下次运行将重新等待输入
-            const refreshButton = this.addWidget("button", "加载新输入", null, () => {
+            const refreshButton = this.addWidget("button", "Load New Input", null, () => {
                 editableWidget.value = "";
                 app.graph.setDirtyCanvas(true);
             });

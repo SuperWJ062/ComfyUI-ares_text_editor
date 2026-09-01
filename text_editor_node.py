@@ -28,10 +28,10 @@ def confirm_pending(node_id, text):
 
 class TextEditorWithConfirm:
     """
-    文本编辑器节点 - 暂停工作流等待人工编辑
-    1. input_text 接入上游文本后运行，节点会阻塞等待
-    2. 前端显示输入文本，在 editable_text 中编辑
-    3. 点击「确认并继续」提交编辑内容，工作流继续执行
+    Text editor node - pauses the workflow and waits for manual editing.
+    1. Run with input_text from an upstream node; the node blocks and waits.
+    2. The input text is shown and edited in editable_text.
+    3. Click "Confirm & Continue" to submit the edits and resume the workflow.
     """
 
     @classmethod
@@ -97,5 +97,5 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "TextEditorWithConfirm": "Ares文本再次编辑",
+    "TextEditorWithConfirm": "Ares Text Editor",
 }

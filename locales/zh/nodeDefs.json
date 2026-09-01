@@ -1,0 +1,13 @@
+{
+  "TextEditorWithConfirm": {
+    "display_name": "Ares 文本编辑器",
+    "description": "文本编辑器节点 - 暂停工作流等待人工编辑。",
+    "inputs": {
+      "input_text": { "name": "输入文本", "tooltip": "上游接入的文本，节点会阻塞等待直到人工确认。" },
+      "editable_text": { "name": "可编辑文本", "tooltip": "用于人工编辑的文本，提交后作为输出。" }
+    },
+    "outputs": {
+      "0": { "name": "输出文本" }
+    }
+  }
+}
